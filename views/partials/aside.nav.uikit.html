@@ -1,0 +1,134 @@
+<nav ui-nav>
+  <ul class="nav">
+    <li class="nav-header h4 m-v-sm">
+      BetterLife 
+    </li>
+    <li ng-class="{active:state}">
+      <a>
+        <span class="pull-right text-muted">
+          <i class="fa fa-caret-down"></i>
+        </span>
+        <i class="icon glyphicon glyphicon-user text-lt"></i>
+        <span class="font-normal">用户管理</span>
+      </a>
+      <ul class="nav nav-sub bg">
+        <li ui-sref-active="active">
+          <a ui-sref="user.userlist">用户列表</a>
+        </li>
+        <li ui-sref-active="active">
+          <a ui-sref="user.adminlist">管理员列表</a>
+        </li>
+        <li ui-sref-active="active">
+          <a ui-sref="user.addadmin">添加管理员</a>
+        </li>
+      </ul>
+    </li>
+    <li ng-class="{active:$state.includes('usergroup')}">
+      <a>
+        <span class="pull-right text-muted">
+          <i class="fa fa-caret-down"></i>
+        </span>
+        <i class="icon fa  fa-group text-lt"></i>
+        <span class="font-normal">用户组管理</span>
+      </a>
+      <ul class="nav nav-sub bg">
+        <li ui-sref-active="active">
+          <a ui-sref="usergroup.grouplist">用户组列表</a>
+        </li>
+      </ul>
+    </li>
+    <li ng-class="{active:$state.includes('permission')}">
+      <a>
+        <span class="pull-right text-muted">
+          <i class="fa fa-caret-down"></i>
+        </span>
+        <i class="icon glyphicon glyphicon-lock text-lt"></i>
+        <span class="font-normal">权限管理</span>
+      </a>
+      <ul class="nav nav-sub bg">
+        <li ui-sref-active="active">
+          <a ui-sref="permission.permissionlist">权限列表</a>
+        </li>
+        <li ui-sref-active="active">
+          <a ui-sref="permission.addpermission">添加权限</a>
+        </li>
+      </ul>
+    </li>
+    <li ng-class="{active:$state.includes('ui.table')}">
+      <a>
+        <span class="pull-right text-muted">
+          <i class="fa fa-caret-down"></i>
+        </span>
+        <i class="icon glyphicon glyphicon-file text-lt"></i>
+        <span class="font-normal">资源管理</span>
+      </a>
+      <ul class="nav nav-sub bg">
+        <li ui-sref-active="active">
+          <a ui-sref="ui.table.static">资源列表</a>
+        </li>
+      </ul>
+    </li>
+    <li ng-class="{active:$state.includes('sort')}">
+      <a>
+        <span class="pull-right text-muted">
+          <i class="fa fa-caret-down"></i>
+        </span> 
+        <i class="icon glyphicon glyphicon-list text-lt"></i>
+        <span class="font-normal">分类管理</span>
+      </a>
+      <ul class="nav nav-sub bg">
+        <li ui-sref-active="active">
+          <a ui-sref="sort.sortlist">分类列表</a>
+        </li>
+        <li ui-sref-active="active">
+          <a ui-sref="sort.addsort">添加分类</a>
+        </li>
+      </ul>
+    </li>
+    <li ng-class="{active:$state.includes('ui.map')}">
+      <a>
+        <span class="pull-right text-muted">
+          <i class="fa fa-caret-down"></i>
+        </span>
+        <i class="icon glyphicon glyphicon-calendar text-lt"></i>
+        <span class="font-normal">计划管理</span>
+      </a>
+      <ul class="nav nav-sub bg">
+        <li ui-sref-active="active">
+          <a ui-sref="ui.map.google">Google Map</a>
+        </li>
+        <li ui-sref-active="active">
+          <a ui-sref="ui.map.vector">Vector Map</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href>
+        <span class="pull-right text-muted">
+          <i class="fa fa-caret-down"></i>
+        </span>
+        <i class="icon glyphicon glyphicon-list-alt text-lt"></i>
+        <span>文章管理</span>
+      </a>
+      <ul class="nav nav-sub bg">
+        <li><a href>Nav levels 1</a></li>
+        <li>
+          <a href>
+            <span class="pull-right text-muted">
+              <i class="fa fa-caret-down"></i>
+            </span>
+            <span class="font-normal">Nav levels 2</span>
+          </a>
+          <ul class="nav nav-sub bg">
+            <li>
+              <a href>Nav levels 2.1</a>
+            </li>
+            <li>
+              <a href>Nav levels 2.2</a>
+            </li>
+          </ul>          
+        </li>        
+      </ul>
+    </li>
+  </ul>
+</nav>

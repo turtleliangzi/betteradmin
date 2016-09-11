@@ -1,0 +1,118 @@
+<div class="p-h-md p-v bg-white box-shadow pos-rlt">
+  <div class="pull-right hidden-xs w">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-sm no-bg btn-icon no-shadow no-padder"><i class="ti-search"></i></button>
+      </span>
+      <input type="text" class="form-control input-sm no-bg no-border" placeholder="Search...">
+    </div>
+  </div>
+  <h3 class="no-margin">Welcome</h3>
+</div>
+<div class="p-md">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel b-light">
+        <div class="panel-heading p-v-xs p-h-sm">
+          <span class="pull-right">20%</span>
+          总用户量
+        </div>
+        <div class="progress progress-xxxs no-margin no-radius bg-white">
+          <div class="progress-bar bg-light" style="width:80%"></div>
+        </div>
+        <div class="panel-body p-sm">
+          <div class="pull-left pull-none-sm p-h text-center m-r-xs">
+            <div class="inline">
+              <div ui-jp="easyPieChart" ui-options="{
+                  percent:20,
+                  lineWidth: 5,
+                  trackColor: '#fff',
+                  barColor: '{{app.color.light}}',
+                  scaleColor: '#fff',
+                  size: 65,
+                  lineCap: 'butt',
+                  color: '{{app.color.success}}',
+                  animate: 3000
+                }">
+                <div class="text-white">
+                  20%
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="clear">
+            <div class="text-2x font-bold">1,000</div>
+            <small class="text-muted">Caculated in 19:30 Thu</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel b-light">
+        <div class="panel-heading p-v-xs p-h-sm">
+          <span class="pull-right">20%</span>
+          在线人数
+        </div>
+        <div class="progress progress-xxxs no-margin no-radius bg-white">
+          <div class="progress-bar bg-light" style="width:20%"></div>
+        </div>
+        <div class="panel-body p-sm">
+          <div class="pull-left pull-none-sm p-h text-center m-r-xs">
+            <div ui-jp="easyPieChart" ui-options="{
+                percent:20,
+                lineWidth: 5,
+                trackColor: '{{app.color.light}}',
+                barColor: '{{app.color.info}}',
+                scaleColor: '#fff',
+                size: 65,
+                lineCap: 'butt',
+                color: '{{app.color.inverse}}',
+                animate: 3000
+              }">
+              <div class="text-white">
+                20%
+              </div>
+            </div>
+          </div>
+          <div class="clear">
+            <div class="text-2x font-bold">500</div>
+            <small class="text-muted">Peaked at 14:30 Mon</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel b-light">
+        <div class="panel-heading p-v-xs p-h-sm">
+          <span class="pull-right">50%</span>
+          文章篇数
+        </div>
+        <div class="progress progress-xxxs no-margin no-radius bg-white">
+          <div class="progress-bar bg-light no-radius" style="width:50%"></div>
+        </div>
+        <div class="panel-body p-sm">
+          <div class="pull-left pull-none-sm p-h text-center m-r-xs">
+            <div ui-jp="easyPieChart" ui-options="{
+              percent: 50,
+              lineWidth: 28,
+              trackColor: '#fff',
+              barColor: '{{app.color.info}}',
+              scaleColor: '#fff',
+              size: 65,
+              lineCap: 'butt',
+              rotate: 90,
+              animate: 5000
+            }">
+            <div class="text-black">
+              50%
+            </div>
+          </div>
+          </div>
+          <div class="clear">
+            <div class="text-2x font-bold">2,000</div>
+            <small class="text-dk">Questions scheduled</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,53 @@
+<div class="p-h-md p-v bg-white box-shadow pos-rlt">
+  <div class="pull-right hidden-xs w">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-sm no-bg btn-icon no-shadow no-padder"><i class="ti-search"></i></button>
+      </span>
+      <input type="text" class="form-control input-sm no-bg no-border" placeholder="Search...">
+    </div>
+  </div>
+  <h3 class="no-margin">{{title}}</h3>
+</div>
+<div class="panel">
+  <div class="panel-body">
+    <form>
+      <label>每页显示条数</label>
+      <input class="input-sm form-control" name="items" id="items" type="text" ng-model="everyPage" ng-change="everyPageChange()" >
+    </form>
+  </div>
+  <table st-table="rowCollectionPage" class="table table-striped">
+    <thead>
+      <tr>
+        <th st-sort="firstName">uid</th>
+        <th>昵称</th>
+        <th>姓名</th>
+        <th>手机号</th>
+        <th>邮箱</th>
+        <th>注册日期</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in admins">
+        <td>{{user.uid}}</td>
+        <td>{{user.nickname}}</td>
+        <td>{{user.realname}}</td>
+        <td>{{user.mobile}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.registertime * 1000 | date : 'yyyy-MM-dd' }}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6" class="text-center">
+          <nav>
+            <ul class="pagination">
+              <li class="currentPage" ng-class="active[currentPage]"  ng-repeat="currentPage in pageNumber" ><a  ng-click="toPage(currentPage)">{{currentPage}}</a></li>
+            </ul>
+          </nav>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+

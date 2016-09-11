@@ -1,0 +1,59 @@
+<div class="p-h-md p-v bg-white box-shadow pos-rlt">
+  <div class="pull-right hidden-xs w">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-sm no-bg btn-icon no-shadow no-padder"><i class="ti-search"></i></button>
+      </span>
+      <input type="text" class="form-control input-sm no-bg no-border" placeholder="Search...">
+    </div>
+  </div>
+  <h3 class="no-margin">{{title}}</h3>
+</div>
+<div class="panel">
+  <div class="panel-body">
+    <form>
+      <label>每页显示页数</label>
+      <input class="input-sm form-control" name="items" id="items" type="text" ng-model="everyPage" ng-change="everyPageChange()" >
+    </form>
+  </div>
+  <table st-table="rowCollectionPage" class="table table-striped">
+    <thead>
+      <tr>
+        <th st-sort="firstName">pid</th>
+        <th>权限名称</th>
+        <th>编辑</th>
+        <th>启用?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="permission in permissions">
+        <td>{{permission.pid}}</td>
+        <td>{{permission.pname}}</td>
+        <td><i style="cursor:pointer" ng-click="editPermission(permission.pid, permission.pname)" class="ui-icon  ti-settings text-tl bg-success"></i></td>
+        <td>
+          <!--<i class="ui-icon glyphicon glyphicon-remove b-danger text-danger"></i> -->
+          <label class="ui-switch bg-primsry m-t-xs m-r" ng-if="permission.status == 1">
+            <input type="checkbox"  checked  ng-click="isAble(permission.pid, permission.status)">
+            <i></i>
+          </label>
+          <label class="ui-switch bg-primsry m-t-xs m-r" ng-if="permission.status == 0">
+            <input type="checkbox"   ng-click="isAble(permission.pid, permission.status)">
+            <i></i>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6" class="text-center">
+          <nav>
+            <ul class="pagination">
+              <li class="currentPage" ng-class="active[currentPage]"  ng-repeat="currentPage in pageNumber" ><a  ng-click="toPage(currentPage)">{{currentPage}}</a></li>
+            </ul>
+          </nav>
+
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+

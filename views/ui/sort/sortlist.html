@@ -1,0 +1,80 @@
+<div class="p-h-md p-v bg-white box-shadow pos-rlt">
+  <div class="pull-right hidden-xs w">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-sm no-bg btn-icon no-shadow no-padder"><i class="ti-search"></i></button>
+      </span>
+      <input type="text" class="form-control input-sm no-bg no-border" placeholder="Search...">
+    </div>
+  </div>
+  <h3 class="no-margin">{{title}}</h3>
+</div>
+<div class="panel">
+  <div class="panel-body">
+    <form>
+      <label>每页显示页数</label>
+      <input class="input-sm form-control" name="items" id="items" type="text" ng-model="everyPage" ng-change="everyPageChange()">
+    </form>
+  </div>
+  <table st-table="rowCollectionPage" class="table table-striped">
+    <thead>
+      <tr>
+        <th>+/-</th>
+        <th>分类名</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="category in categorylist">
+        <td style="width:50px;"><i style="cursor:pointer;" ng-click="showTags(category.categoryid);" class="fa fa-plus  inline" ng-class="'fa-' + showType[category.categoryid]"></i></td>
+        <td>
+          {{category.cname}}
+            <ul ng-show="isShow[category.categoryid]" class="nav  nav-bg">
+              <li ng-repeat="sign in category.signs" style="height:35px;line-height:35px;padding-left:3px;">
+                <span class="icon glyphicon glyphicon-tag text-tl"></span>
+                {{sign.signname}}
+                <i ng-click="editSign(sign.signid, sign.signname, category.categoryid)" class="icon  ti-settings text" style="margin-left:10px;cursor:pointer"></i>
+                <label class="ui-switch bg-primsry m-t-xs m-r" ng-if="sign.status == 1">
+                  <input type="checkbox"  checked  ng-click="isSignAble(sign.signid, sign.status)">
+                  <i></i>
+                </label>
+                <label class="ui-switch bg-primsry m-t-xs m-r" ng-if="sign.status == 0">
+                  <input type="checkbox"   ng-click="isSignAble(sign.signid, sign.status)">
+                  <i></i>
+                </label>
+
+              </li>
+            </ul>
+        </td>
+        <td style="width:150px;">
+          <i ng-click="addSign(category.categoryid, category.cname)" style="margin-right:3px; cursor:pointer" class="ui-icon fa fa-plus text bg-info"></i>
+          <i ng-click="editSort(category.categoryid, category.cname)" style="margin-right:3px;cursor:pointer" class="ui-icon  ti-settings text bg-success"></i>
+          <label style=""  class="ui-switch bg-primsry m-t-xs m-r" ng-if="category.status == 1">
+            <input type="checkbox"  checked  ng-click="isCategoryAble(category.categoryid, category.status)">
+            <i></i>
+          </label>
+          <label class="ui-switch bg-primsry m-t-xs m-r" ng-if="category.status == 0">
+            <input type="checkbox"   ng-click="isCategoryAble(category.categoryid, category.status)">
+            <i></i>
+          </label>
+
+        </td>
+
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6" class="text-center">
+          <nav>
+            <ul class="pagination">
+              <li class="currentPage" ng-class="active[currentPage]"  ng-repeat="currentPage in pageNumber" ><a  ng-click="toPage(currentPage)">{{currentPage}}</a></li>
+            </ul>
+          </nav>
+
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+
